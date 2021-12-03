@@ -82,6 +82,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: BatteryIndicatorStyle.values[_styleIndex],
                   colorful: _colorful,
                   showPercentNum: _showPercentNum,
+                  batteryFromPhone: false,
+                  batteryLevel: 30,
                   mainColor: _color,
                   size: _size,
                   ratio: _ratio,

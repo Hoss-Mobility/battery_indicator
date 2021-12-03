@@ -95,7 +95,7 @@ class _BatteryIndicatorState extends State<BatteryIndicator> {
                       : widget.size * widget.ratio * 0.04),
               child: widget.showPercentNum
                   ? Text(
-                '$batteryLv',
+                '$batteryLv%',
                 style: TextStyle(
                     fontSize: widget.percentNumSize ?? widget.size * 0.9),
               )
@@ -160,7 +160,7 @@ class BatteryIndicatorPainter extends CustomPainter {
               size.height * 0.95, Radius.circular(size.height * 0.1)),
           Paint()
             ..color = mainColor
-            ..strokeWidth = 0.8
+            ..strokeWidth = 2
             ..style = PaintingStyle.stroke);
 
       /// 绘制拟物轮廓电池头部
@@ -173,10 +173,10 @@ class BatteryIndicatorPainter extends CustomPainter {
 
       if (showPercentSlide) {
         /// 制作绘制遮盖区域
-        canvas.clipRect(Rect.fromLTWH(0.0, size.height * 0.05,
+        canvas.clipRect(Rect.fromLTWH(0.0, size.height * 0.0,
             size.width * 0.92 * fixedBatteryLv / 100, size.height * 0.95));
 
-        double offset = size.height * 0.1;
+        double offset = 0;
 
         /// 绘制填充
         canvas.drawRRect(
